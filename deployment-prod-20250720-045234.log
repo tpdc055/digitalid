@@ -1,0 +1,55 @@
+
+[0;35m============================================[0m
+[0;35m 🚀 PNG DIGITAL ID SYSTEM - PRODUCTION DEPLOYMENT[0m
+[0;35m============================================[0m
+
+[0;34m[2025-07-20 04:52:34][0m Starting complete production deployment...
+[0;34m[2025-07-20 04:52:34][0m Deployment ID: prod-20250720-045234
+[0;34m[2025-07-20 04:52:34][0m Version: 1.0.0
+[0;34m[2025-07-20 04:52:34][0m Timestamp: Sun Jul 20 04:52:34 UTC 2025
+
+[0;35m============================================[0m
+[0;35m Checking Prerequisites[0m
+[0;35m============================================[0m
+
+[0;34m[2025-07-20 04:52:34][0m Verifying required tools and dependencies...
+[1;33m[WARNING][0m Environment variable DATABASE_URL is not set
+[1;33m[WARNING][0m Environment variable JWT_SECRET is not set
+[1;33m[WARNING][0m Environment variable ENCRYPTION_KEY is not set
+[1;33m[WARNING][0m Environment variable SENTRY_DSN is not set
+[0;32m[SUCCESS][0m Prerequisites check completed
+
+[0;35m============================================[0m
+[0;35m ✅ Phase 1: Pre-deployment Preparation[0m
+[0;35m============================================[0m
+
+[0;34m[2025-07-20 04:52:34][0m Installing production dependencies...
+[0.07ms] ".env.production"
+bun install v1.2.17 (282dda62)
+
+6 packages installed [15.00ms]
+[0;34m[2025-07-20 04:52:34][0m Running code quality checks...
+[1;33m[WARNING][0m Linting issues found - check lint-report-prod-20250720-045234.txt
+[0;34m[2025-07-20 04:52:35][0m Building production assets...
+$ next build
+ ⨯ Failed to load env from /home/project/.env.production RangeError: Maximum call stack size exceeded
+    at RegExpStringIterator.next (<anonymous>)
+    at Function.from (<anonymous>)
+   ▲ Next.js 15.3.2
+   - Environments: .env.production
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./src/components/ui/switch.tsx
+Module not found: Can't resolve '@radix-ui/react-switch'
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./src/components/identity/ConsentManagementDashboard.tsx
+./src/app/identity/page.tsx
+
+
+> Build failed because of webpack errors
+error: script "build" exited with code 1

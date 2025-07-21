@@ -1,0 +1,3 @@
+$ next lint
+The requested module 'minimatch' does not provide an export named 'default'
+error: script "lint" exited with code 1
